@@ -1,0 +1,32 @@
+---
+import '../styles/globals.css';
+import DarkToggle from '../components/DarkToggle';
+const { title = 'Retro Portfolio' } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body class="antialiased">
+    <div class="max-w-4xl mx-auto p-4">
+      <header class="flex justify-between items-center mb-8">
+        <div class="logo-container">
+          <img
+            src="/logo.png"
+            alt="SirKadogan 8-bit logo"
+            class="h-28 w-auto"
+          />
+        </div>
+        <div class="inline-block">
+          <astro-island>
+            <DarkToggle client:load />
+          </astro-island>
+        </div>
+      </header>
+      <main><slot /></main>
+    </div>
+  </body>
+</html>

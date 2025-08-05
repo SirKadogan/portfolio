@@ -1,0 +1,90 @@
+---
+import Layout from '../components/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import RetroMenu from '../components/RetroMenu.astro';
+import { getCollection } from 'astro:content';
+
+// Get all projects from the content collection
+const projects = await getCollection('projects');
+// Sort by date (newest first)
+const sortedProjects = projects.sort(
+  (a: any, b: any) =>
+    new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+// Define menu items
+const menuItems = [
+  { label: 'About Me', targetId: 'about' },
+  { label: 'Projects', targetId: 'projects' },
+  { label: 'Experience', targetId: 'experience' },
+  { label: 'My Links', targetId: 'links' },
+];
+---
+
+<Layout title="My Retro Portfolio">
+  <section class="mb-12">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <p class="text-lg">
+          Hi! I'm Thales Kenne, a Senior Software Engineer with 7 years of
+          experience in the industry. For the past 4+ years, I've been helping
+          US-based clients build their products and scale their teams.
+        </p>
+      </div>
+      <div class="flex justify-center md:justify-end">
+        <img
+          src="/avatar-background.png"
+          alt="Thales Kenne - Pixel Art Avatar"
+          class="w-72 h-72 object-contain"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Retro Navigation Menu -->
+  <section class="mb-12">
+    <RetroMenu items={menuItems} />
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="mb-12">
+    <h2 class="text-2xl font-bold mb-6 text-center">About Me</h2>
+    <div class="max-w-4xl mx-auto">
+      <p class="text-lg text-center">[About me content will go here]</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 class="text-2xl font-bold mb-6 text-center">Projects</h2>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        sortedProjects.map((project: any) => (
+          <ProjectCard
+            title={project.data.title}
+            summary={project.data.summary}
+            tech={project.data.tech}
+            github={project.data.github}
+            demo={project.data.demo}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="mt-12">
+    <h2 class="text-2xl font-bold mb-6 text-center">Experience</h2>
+    <div class="max-w-4xl mx-auto">
+      <p class="text-lg text-center">[Experience content will go here]</p>
+    </div>
+  </section>
+
+  <!-- My Links Section -->
+  <section id="links" class="mt-12">
+    <h2 class="text-2xl font-bold mb-6 text-center">My Links</h2>
+    <div class="max-w-4xl mx-auto">
+      <p class="text-lg text-center">[My Links content will go here]</p>
+    </div>
+  </section>
+</Layout>
