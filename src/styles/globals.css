@@ -30,16 +30,42 @@ body {
 .retro-card {
   background: var(--bg);
   border: 2px solid var(--primary);
-  box-shadow: inset -4px -4px 0 var(--muted), 4px 4px 0 var(--accent);
-  padding: 1rem;
+  box-shadow:
+      inset -2px -2px 0 var(--muted),
+      2px 2px 0 var(--accent);
+  padding: 1.5rem;
+  transition: all 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
-  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
 
 .retro-card:hover {
-  transform: translateY(-2px);
-  box-shadow: inset -6px -6px 0 var(--muted), 6px 6px 0 var(--accent);
+  transform: translateX(4px);
+  box-shadow:
+      inset -4px -4px 0 var(--muted),
+      4px 4px 0 var(--accent);
+}
+
+.retro-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(224, 169, 109, 0.1),
+      transparent
+  );
+  transition: left 0.5s;
+}
+
+.retro-card:hover::before {
+ left: 100%;
 }
 
 .pixelated { image-rendering: crisp-edges; image-rendering: pixelated; }

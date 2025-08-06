@@ -26,7 +26,7 @@ const { milestones } = Astro.props;
           <div class="marker-line" />
         </div>
 
-        <div class="timeline-content">
+        <div class="retro-card">
           <div class="timeline-header">
             <span class="timeline-year">{milestone.year}</span>
             <h3 class="timeline-title">{milestone.title}</h3>
@@ -102,23 +102,6 @@ const { milestones } = Astro.props;
     height: 2rem;
     background: var(--primary);
     margin-top: 0.5rem;
-  }
-
-  .timeline-content {
-    background: var(--bg);
-    border: 2px solid var(--primary);
-    box-shadow:
-      inset -2px -2px 0 var(--muted),
-      2px 2px 0 var(--accent);
-    padding: 1.5rem;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .timeline-content:hover {
-    transform: translateX(4px);
-    box-shadow:
-      inset -4px -4px 0 var(--muted),
-      4px 4px 0 var(--accent);
   }
 
   .timeline-header {

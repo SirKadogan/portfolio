@@ -18,7 +18,7 @@ const { links } = Astro.props;
       href={links.linkedin}
       target="_blank"
       rel="noopener noreferrer"
-      class="social-link linkedin-link"
+      class="retro-card linkedin-link"
     >
       <div class="link-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -38,7 +38,7 @@ const { links } = Astro.props;
       href={links.github}
       target="_blank"
       rel="noopener noreferrer"
-      class="social-link github-link"
+      class="retro-card github-link"
     >
       <div class="link-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -58,7 +58,7 @@ const { links } = Astro.props;
       href={links.stackoverflow}
       target="_blank"
       rel="noopener noreferrer"
-      class="social-link stackoverflow-link"
+      class="retro-card stackoverflow-link"
     >
       <div class="link-icon">
         <svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor">
@@ -74,7 +74,7 @@ const { links } = Astro.props;
     </a>
 
     <!-- CV Download -->
-    <a href={links.cv} download class="social-link cv-link">
+    <a href={links.cv} download class="retro-card cv-link">
       <div class="link-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
           <path
@@ -100,50 +100,6 @@ const { links } = Astro.props;
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-
-  .social-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    background: var(--bg);
-    border: 2px solid var(--primary);
-    box-shadow:
-      inset -3px -3px 0 var(--muted),
-      3px 3px 0 var(--accent);
-    text-decoration: none;
-    color: var(--text);
-    transition: all 0.2s ease-in-out;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .social-link:hover {
-    transform: translateY(-4px);
-    box-shadow:
-      inset -5px -5px 0 var(--muted),
-      5px 5px 0 var(--accent);
-  }
-
-  .social-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(224, 169, 109, 0.1),
-      transparent
-    );
-    transition: left 0.5s;
-  }
-
-  .social-link:hover::before {
-    left: 100%;
   }
 
   .link-icon {
@@ -201,7 +157,7 @@ const { links } = Astro.props;
       gap: 1rem;
     }
 
-    .social-link {
+    .retro-card {
       padding: 1rem;
     }
 
