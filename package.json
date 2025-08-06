@@ -7,8 +7,7 @@
         "build": "astro build",
         "preview": "astro preview",
         "lint": "eslint . --ext .ts,.tsx,.astro",
-        "format": "prettier --write .",
-        "deploy": "npm run build && gh-pages -d dist"
+        "format": "prettier --write ."
     },
     "type": "module",
     "dependencies": {
@@ -25,7 +24,6 @@
         "eslint-config-prettier": "*",
         "eslint-plugin-astro": "*",
         "eslint-plugin-import": "*",
-        "gh-pages": "^6.3.0",
         "husky": "*",
         "postcss": "*",
         "prettier": "*",

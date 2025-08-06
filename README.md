@@ -59,19 +59,12 @@ npm run dev
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
-- `npm run deploy` - Deploy to GitHub Pages
 
 ## 🚀 Deployment
 
 This project is automatically deployed to GitHub Pages via GitHub Actions. Simply push to the `main` branch and the site will be deployed automatically.
 
-### Manual Deployment
-
-If you prefer to deploy manually:
-
-```bash
-npm run deploy
-```
+The deployment uses GitHub's newer Pages deployment method that works directly from the main branch.
 
 ## 📁 Project Structure
 
