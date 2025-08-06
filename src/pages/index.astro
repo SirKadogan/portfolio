@@ -2,6 +2,8 @@
 import Layout from '../components/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import RetroMenu from '../components/RetroMenu.astro';
+import CareerTimeline from '../components/CareerTimeline.astro';
+import SocialLinks from '../components/SocialLinks.astro';
 import { getCollection } from 'astro:content';
 
 // Get all projects from the content collection
@@ -12,12 +14,20 @@ const sortedProjects = projects.sort(
     new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
 
+// Get all career milestones from the content collection
+const careerMilestones = await getCollection('career-milestones');
+// Sort by year (newest first)
+const sortedMilestones = careerMilestones.sort(
+  (a: any, b: any) =>
+    new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
 // Define menu items
 const menuItems = [
-  { label: 'About Me', targetId: 'about' },
-  { label: 'Projects', targetId: 'projects' },
   { label: 'Experience', targetId: 'experience' },
+  { label: 'Projects', targetId: 'projects' },
   { label: 'My Links', targetId: 'links' },
+  { label: 'About Me', targetId: 'about' },
 ];
 ---
 
@@ -46,12 +56,19 @@ const menuItems = [
     <RetroMenu items={menuItems} />
   </section>
 
-  <!-- About Me Section -->
-  <section id="about" class="mb-12">
-    <h2 class="text-2xl font-bold mb-6 text-center">About Me</h2>
-    <div class="max-w-4xl mx-auto">
-      <p class="text-lg text-center">[About me content will go here]</p>
-    </div>
+  <!-- Experience Section -->
+  <section id="experience" class="mt-12">
+    <h2 class="text-2xl font-bold mb-6 text-center">Experience</h2>
+    <CareerTimeline
+      milestones={sortedMilestones.map((milestone) => ({
+        year: milestone.data.year,
+        title: milestone.data.title,
+        company: milestone.data.company,
+        description: milestone.data.description,
+        type: milestone.data.type,
+        date: milestone.data.date,
+      }))}
+    />
   </section>
 
   <!-- Projects Section -->
@@ -72,19 +89,39 @@ const menuItems = [
     </div>
   </section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="mt-12">
-    <h2 class="text-2xl font-bold mb-6 text-center">Experience</h2>
-    <div class="max-w-4xl mx-auto">
-      <p class="text-lg text-center">[Experience content will go here]</p>
+  <!-- About Me Section -->
+  <section id="about" class="mt-12">
+    <h2 class="text-2xl font-bold mb-6 text-center">About Me</h2>
+    <div class="max-w-4xl mx-auto text-sm text-center flex flex-col gap-4">
+      <p>
+        I'm a mechatronics engineer who turned software engineering into a
+        passion. Always having worked remotely, I quickly saw potential for
+        growth by working with US-based companies.
+      </p>
+      <p>
+        Throughout my career, I always strived to deliver more than just code
+        and I'm an aficionado for project management. I believe development and
+        project management walk hand in hand and processes are extremely
+        important, but they must be tailored to each squad and be light weight.
+      </p>
+      <p>
+        In my personal life, I enjoy the usual nerdy things: reading and gaming.
+        I also enjoy working out and spend a whole lot of time in my garden
+        taking care of my little plants.
+      </p>
     </div>
   </section>
 
   <!-- My Links Section -->
   <section id="links" class="mt-12">
     <h2 class="text-2xl font-bold mb-6 text-center">My Links</h2>
-    <div class="max-w-4xl mx-auto">
-      <p class="text-lg text-center">[My Links content will go here]</p>
-    </div>
+    <SocialLinks
+      links={{
+        linkedin: 'https://linkedin.com/in/thaleskenne',
+        github: 'https://github.com/sirkadogan',
+        stackoverflow: 'https://stackoverflow.com/users/8754782/thales-kenne',
+        cv: '/thales-kenne-cv.pdf',
+      }}
+    />
   </section>
 </Layout>

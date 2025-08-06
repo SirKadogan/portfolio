@@ -1,0 +1,192 @@
+---
+export interface Props {
+  milestones: {
+    year: string;
+    title: string;
+    company?: string;
+    description: string;
+    date: string;
+    type: 'company' | 'project';
+  }[];
+}
+
+const { milestones } = Astro.props;
+---
+
+<div class="career-timeline">
+  <div class="timeline-line"></div>
+
+  {
+    milestones.map((milestone) => (
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <div
+            class={`marker-dot ${milestone.type === 'company' ? 'company-marker' : 'project-marker'}`}
+          />
+          <div class="marker-line" />
+        </div>
+
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <span class="timeline-year">{milestone.year}</span>
+            <h3 class="timeline-title">{milestone.title}</h3>
+            {milestone.company && (
+              <span class="timeline-company">{milestone.company}</span>
+            )}
+          </div>
+          <p class="timeline-description">{milestone.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .career-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 2rem;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--primary);
+    box-shadow: 0 0 8px var(--primary);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 6rem;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .marker-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--primary);
+    z-index: 2;
+  }
+
+  .company-marker {
+    background: var(--accent);
+    box-shadow:
+      0 0 0 2px var(--primary),
+      0 0 8px var(--accent);
+  }
+
+  .project-marker {
+    background: var(--muted);
+    box-shadow:
+      0 0 0 2px var(--primary),
+      0 0 8px var(--muted);
+  }
+
+  .marker-line {
+    width: 2px;
+    height: 2rem;
+    background: var(--primary);
+    margin-top: 0.5rem;
+  }
+
+  .timeline-content {
+    background: var(--bg);
+    border: 2px solid var(--primary);
+    box-shadow:
+      inset -2px -2px 0 var(--muted),
+      2px 2px 0 var(--accent);
+    padding: 1.5rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .timeline-content:hover {
+    transform: translateX(4px);
+    box-shadow:
+      inset -4px -4px 0 var(--muted),
+      4px 4px 0 var(--accent);
+  }
+
+  .timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .timeline-year {
+    background: var(--accent);
+    color: var(--bg);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 2px solid var(--bg);
+    box-shadow:
+      inset -1px -1px 0 var(--muted),
+      1px 1px 0 var(--accent);
+  }
+
+  .timeline-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin: 0;
+  }
+
+  .timeline-company {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  .timeline-description {
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .career-timeline {
+      padding: 1rem 0;
+    }
+
+    .timeline-line {
+      left: 1.5rem;
+    }
+
+    .timeline-item {
+      padding-left: 4rem;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-marker {
+      left: -0.5rem;
+    }
+
+    .timeline-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .timeline-content {
+      padding: 1rem;
+    }
+  }
+</style>

@@ -1,0 +1,84 @@
+# Retro Astro Portfolio - Cursor Rules
+
+## Project Overview
+
+This is a personal portfolio website for Thales Kenne, a Senior Software Engineer with 7 years of experience. The project uses Astro with React components, TypeScript, and Tailwind CSS. The theme is retro 8-bit/DOS/SNES aesthetic.
+
+## Tech Stack
+
+- **Framework**: Astro 4.0+ with React integration
+- **Styling**: Tailwind CSS with custom NES color palette
+- **Language**: TypeScript
+- **Content**: MDX for project documentation
+- **Font**: Press Start 2P (8-bit pixel font)
+
+## Design System & Theme
+
+- **Color Palette**: NES-inspired colors (dark blue bg, golden primary, red accent, muted gray)
+- **Typography**: Press Start 2P font for authentic 8-bit feel
+- **Visual Style**:
+  - Pixelated graphics and borders
+  - Retro card designs with inset shadows
+  - DOS/SNES game interface aesthetics
+  - Chunky borders and pixel-perfect elements
+- **Components**: Should have retro gaming UI elements (menus, cards, buttons)
+
+## File Structure
+
+```
+src/
+├── components/     # React & Astro components
+├── content/        # MDX content for projects
+├── pages/          # Astro pages
+└── styles/         # Global styles
+```
+
+## Coding Standards
+
+- Use TypeScript for all components
+- Follow Astro best practices for component architecture
+- Implement responsive design with mobile-first approach
+- Use semantic HTML and accessibility best practices
+- Maintain consistent retro aesthetic across all components
+
+## Content Guidelines
+
+- **About Me**: Professional background, skills, and personal interests
+- **Projects**: Showcase software development work with tech stack details
+- **Experience**: Work history and achievements
+- **Links**: Professional profiles (GitHub, LinkedIn, etc.)
+
+## Component Patterns
+
+- Use `.retro-card` class for card components
+- Implement hover effects with transform and shadow changes
+- Use pixelated borders and chunky styling
+- Maintain consistent spacing and typography
+
+## Development Workflow
+
+- Use `npm run dev` for development
+- Follow ESLint and Prettier configurations
+- Test responsive design across different screen sizes
+- Ensure dark/light mode compatibility
+
+## Future Enhancements
+
+- Add interactive retro game elements
+- Implement smooth scrolling navigation
+- Add loading animations with retro effects
+- Consider adding sound effects for interactions
+- Implement progressive web app features
+
+## AI Assistant Guidelines
+
+When helping with this project:
+
+1. Always maintain the retro 8-bit aesthetic
+2. Suggest pixelated graphics and chunky UI elements
+3. Use the established NES color palette
+4. Consider DOS/SNES game interface patterns
+5. Prioritize performance and accessibility
+6. Suggest retro-themed interactions and animations
+7. Maintain consistency with existing components
+8. Consider mobile responsiveness for all features
