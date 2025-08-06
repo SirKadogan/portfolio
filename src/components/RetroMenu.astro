@@ -13,7 +13,7 @@ const { title = 'MAIN MENU', items } = Astro.props;
 ---
 
 <div class="max-w-md mx-auto">
-  <div class="bg-gray-900 border-2 border-gray-600 p-6">
+  <div class="dark:bg-gray-900 border-2 border-gray-600 p-6">
     <h3 class="text-green-400 text-lg mb-4 text-center">{title}</h3>
     <nav>
       <ul class="space-y-2">
@@ -22,7 +22,7 @@ const { title = 'MAIN MENU', items } = Astro.props;
             <li>
               <button
                 onclick={`document.getElementById('${item.targetId}').scrollIntoView({behavior: 'smooth'})`}
-                class="w-full text-left text-white hover:text-green-400 hover:bg-gray-800 px-2 py-1 transition-colors duration-200 flex items-center"
+                class="w-full text-left dark:text-white hover:text-green-400 px-2 py-1 transition-colors duration-200 flex items-center"
               >
                 <span class="text-green-400 mr-2">></span>
                 {item.label}
