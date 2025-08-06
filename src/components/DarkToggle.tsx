@@ -22,9 +22,23 @@ export default function DarkToggle() {
     <button
       aria-label="Toggle dark/light"
       onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}
-      className="retro-card"
+      className="retro-card flex items-center justify-center gap-2"
     >
-      {mode === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
+      {/* Mobile: 8-bit icon */}
+      <span className="block md:hidden">
+        <img
+          src={mode === 'dark' ? '/sun.svg' : '/moon.svg'}
+          alt={mode === 'dark' ? 'Sun (light mode)' : 'Moon (dark mode)'}
+          width={32}
+          height={32}
+          className="pixelated"
+          style={{ imageRendering: 'pixelated' }}
+        />
+      </span>
+      {/* Desktop: Text */}
+      <span className="hidden md:inline">
+        {mode === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}
+      </span>
     </button>
   );
 }

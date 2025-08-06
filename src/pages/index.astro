@@ -5,6 +5,7 @@ import RetroMenu from '../components/RetroMenu.astro';
 import CareerTimeline from '../components/CareerTimeline.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import { getCollection } from 'astro:content';
+import BlogCard from '../components/BlogCard.astro';
 
 // Get all projects from the content collection
 const projects = await getCollection('projects');
@@ -28,6 +29,7 @@ const menuItems = [
   { label: 'Projects', targetId: 'projects' },
   { label: 'My Links', targetId: 'links' },
   { label: 'About Me', targetId: 'about' },
+  { label: 'Blog', targetId: 'blog' },
 ];
 ---
 
@@ -123,5 +125,24 @@ const menuItems = [
         cv: '/thales-kenne-cv.pdf',
       }}
     />
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="mt-12">
+    <h2 class="text-2xl font-bold mb-6 text-center">Blog</h2>
+    <div class="grid gap-6 md:grid-cols-2">
+      <BlogCard
+        title="Mastering OpenSearch at Scale: A Practical Guide for Enterprise Search Solutions"
+        url="https://www.whitespectre.com/ideas/scaling-opensearch-for-enterprise/"
+        published="January 7, 2025"
+        source="whitespectre.com"
+      />
+      <BlogCard
+        title="Why you should avoid useEffect"
+        url="https://sirkadogan.medium.com/why-you-should-avoid-useeffect-55b9c79e985a"
+        published="May 2, 2021"
+        source="medium.com"
+      />
+    </div>
   </section>
 </Layout>
