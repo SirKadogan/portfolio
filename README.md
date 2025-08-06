@@ -1,6 +1,6 @@
 # Retro Astro Portfolio 🎮
 
-A personal portfolio website built with Astro, React, and TypeScript featuring a retro 8-bit/DOS/SNES aesthetic.
+My personal portfolio website built with Astro, React, and TypeScript featuring a retro 8-bit/DOS/SNES aesthetic.
 
 ## 🚀 Live Demo
 
@@ -22,50 +22,6 @@ Visit the live site: https://sirkadogan.github.io/portfolio/
 - Responsive design with mobile-first approach
 - Dark/light mode support
 
-## 🏃‍♂️ Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm or yarn
-
-### Installation
-
-1. Clone the repository
-
-```bash
-git clone https://github.com/yourusername/retro-astro-portfolio.git
-cd retro-astro-portfolio
-```
-
-2. Install dependencies
-
-```bash
-npm install
-```
-
-3. Start the development server
-
-```bash
-npm run dev
-```
-
-4. Open [http://localhost:4321](http://localhost:4321) in your browser
-
-## 📦 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code with Prettier
-
-## 🚀 Deployment
-
-This project is automatically deployed to GitHub Pages via GitHub Actions. Simply push to the `main` branch and the site will be deployed automatically.
-
-The deployment uses GitHub's newer Pages deployment method that works directly from the main branch.
-
 ## 📁 Project Structure
 
 ```
@@ -83,14 +39,6 @@ src/
 - **Experience**: Work history and achievements
 - **Blog**: Technical articles and insights
 - **Contact**: Professional links and information
-
-## 🤝 Contributing
-
-This is a personal portfolio project, but suggestions and feedback are welcome!
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
