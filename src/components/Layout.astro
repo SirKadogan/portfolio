@@ -27,6 +27,19 @@ const { title = 'Retro Portfolio' } = Astro.props;
         </div>
       </header>
       <main><slot /></main>
+      <footer
+        class="mt-12 flex flex-col items-center text-xs text-gray-400 font-mono tracking-widest select-none"
+      >
+        <span>Thales Kenne</span>
+        <span class="flex items-center gap-1 mt-1">
+          <span
+            class="inline-block align-middle"
+            style="font-family: 'Press Start 2P', monospace; font-size: 1em;"
+            >©</span
+          >
+          <span>1994-2025</span>
+        </span>
+      </footer>
     </div>
   </body>
 </html>
