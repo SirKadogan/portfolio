@@ -4,7 +4,7 @@ A personal portfolio website built with Astro, React, and TypeScript featuring a
 
 ## 🚀 Live Demo
 
-Visit the live site: [Your GitHub Pages URL will be here]
+Visit the live site: https://sirkadogan.github.io/portfolio/
 
 ## 🛠️ Tech Stack
 
@@ -26,23 +26,26 @@ Visit the live site: [Your GitHub Pages URL will be here]
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/yourusername/retro-astro-portfolio.git
 cd retro-astro-portfolio
 ```
 
 2. Install dependencies
+
 ```bash
 npm install
 ```
 
 3. Start the development server
+
 ```bash
 npm run dev
 ```
@@ -98,4 +101,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-Built with ❤️ by Thales Kenne 
+Built with ❤️ by Thales Kenne
