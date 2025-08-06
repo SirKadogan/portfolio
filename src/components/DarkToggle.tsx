@@ -16,6 +16,9 @@ export default function DarkToggle() {
       root.classList.remove('light');
     }
     localStorage.setItem('theme', mode);
+
+    // Ensure body is visible when component loads
+    document.body.classList.add('theme-loaded');
   }, [mode]);
 
   return (

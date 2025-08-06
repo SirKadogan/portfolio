@@ -19,6 +19,16 @@ body {
   min-height: 100%;
 }
 
+/* Prevent flash of unstyled content */
+body {
+  visibility: hidden;
+}
+
+/* Show body once theme is applied */
+body.theme-loaded {
+  visibility: visible;
+}
+
 .light {
   --bg: #f5f5f5;
   --text: #0d1b2a;
