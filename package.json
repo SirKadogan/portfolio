@@ -1,33 +1,35 @@
 {
-  "name": "retro-astro-portfolio",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "lint": "eslint . --ext .ts,.tsx,.astro",
-    "format": "prettier --write ."
-  },
-  "type": "module",
-  "dependencies": {
-    "@astrojs/mdx": "^3.1.9",
-    "@astrojs/react": "^4.3.0",
-    "@astrojs/tailwind": "^6.0.2",
-    "astro": "^4.0.0",
-    "react": "^19.1.1"
-  },
-  "devDependencies": {
-    "@types/node": "*",
-    "autoprefixer": "*",
-    "eslint": "*",
-    "eslint-config-prettier": "*",
-    "eslint-plugin-astro": "*",
-    "eslint-plugin-import": "*",
-    "husky": "*",
-    "postcss": "*",
-    "prettier": "*",
-    "tailwindcss": "*",
-    "typescript": "*"
-  }
+    "name": "retro-astro-portfolio",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "lint": "eslint . --ext .ts,.tsx,.astro",
+        "format": "prettier --write .",
+        "deploy": "npm run build && gh-pages -d dist"
+    },
+    "type": "module",
+    "dependencies": {
+        "@astrojs/mdx": "^3.1.9",
+        "@astrojs/react": "^4.3.0",
+        "@astrojs/tailwind": "^6.0.2",
+        "astro": "^4.0.0",
+        "react": "^19.1.1"
+    },
+    "devDependencies": {
+        "@types/node": "*",
+        "autoprefixer": "*",
+        "eslint": "*",
+        "eslint-config-prettier": "*",
+        "eslint-plugin-astro": "*",
+        "eslint-plugin-import": "*",
+        "gh-pages": "^6.3.0",
+        "husky": "*",
+        "postcss": "*",
+        "prettier": "*",
+        "tailwindcss": "*",
+        "typescript": "*"
+    }
 }
