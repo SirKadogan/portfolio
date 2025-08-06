@@ -9,4 +9,6 @@ export default defineConfig({
     syntaxHighlight: 'shiki',
   },
   output: 'static',
+  site: 'https://sirkadogan.github.io',
+  base: 'portfolio',
 });
