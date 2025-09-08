@@ -30,7 +30,7 @@ export default function DarkToggle() {
       {/* Mobile: 8-bit icon */}
       <span className="block md:hidden">
         <img
-          src={mode === 'dark' ? '/portfolio/sun.svg' : '/portfolio/moon.svg'}
+          src={mode === 'dark' ? '/sun.svg' : '/moon.svg'}
           alt={mode === 'dark' ? 'Sun (light mode)' : 'Moon (dark mode)'}
           width={32}
           height={32}

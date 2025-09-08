@@ -4,6 +4,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 import RetroMenu from '../components/RetroMenu.astro';
 import CareerTimeline from '../components/CareerTimeline.astro';
 import SocialLinks from '../components/SocialLinks.astro';
+import TechnologiesHierarchy from '../components/TechnologiesHierarchy.astro';
 import { getCollection } from 'astro:content';
 import BlogCard from '../components/BlogCard.astro';
 
@@ -27,6 +28,7 @@ const sortedMilestones = careerMilestones.sort(
 const menuItems = [
   { label: 'Experience', targetId: 'experience' },
   { label: 'Projects', targetId: 'projects' },
+  { label: 'Technologies', targetId: 'technologies' },
   { label: 'About Me', targetId: 'about' },
   { label: 'My Links', targetId: 'links' },
   { label: 'Blog', targetId: 'blog' },
@@ -45,7 +47,7 @@ const menuItems = [
       </div>
       <div class="flex justify-center md:justify-end">
         <img
-          src="/portfolio/avatar-background.png"
+          src="/avatar-background.png"
           alt="Thales Kenne - Pixel Art Avatar"
           class="w-72 h-72 object-contain"
         />
@@ -62,7 +64,7 @@ const menuItems = [
   <section id="experience" class="mt-12">
     <h2 class="text-2xl font-bold mb-6 text-center">Experience</h2>
     <CareerTimeline
-      milestones={sortedMilestones.map((milestone) => ({
+      milestones={sortedMilestones.map((milestone: any) => ({
         year: milestone.data.year,
         title: milestone.data.title,
         company: milestone.data.company,
@@ -88,6 +90,14 @@ const menuItems = [
           />
         ))
       }
+    </div>
+  </section>
+
+  <!-- Technologies Section -->
+  <section id="technologies" class="mt-12">
+    <h2 class="text-2xl font-bold mb-6 text-center">Technologies & Tools</h2>
+    <div class="max-w-6xl mx-auto">
+      <TechnologiesHierarchy />
     </div>
   </section>
 
@@ -122,7 +132,7 @@ const menuItems = [
         linkedin: 'https://linkedin.com/in/thaleskenne',
         github: 'https://github.com/sirkadogan',
         stackoverflow: 'https://stackoverflow.com/users/8754782/thales-kenne',
-        cv: '/portfolio/thales-kenne-cv.pdf',
+        cv: '/thales-kenne-cv.pdf',
       }}
     />
   </section>

@@ -79,3 +79,29 @@ body.theme-loaded {
 }
 
 .pixelated { image-rendering: crisp-edges; image-rendering: pixelated; }
+
+/* Technology card enhancements */
+.tech-tag {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.2),
+    transparent
+  );
+  transition: left 0.3s ease;
+}
+
+.tech-tag:hover::before {
+  left: 100%;
+}
